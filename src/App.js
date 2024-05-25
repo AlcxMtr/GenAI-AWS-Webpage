@@ -1,11 +1,11 @@
 import React from 'react';
-import Deployments from './Deployments';
+import AWS from './MainWebpage';
 import './index.css';  // Ensure this line is present
 
 function App() {
   return (
     <div className="App">
-      <Deployments />
+      <AWS />
     </div>
   );
 }

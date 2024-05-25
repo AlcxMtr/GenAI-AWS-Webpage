@@ -85,7 +85,7 @@ const App = () => {
           className="pt-8 pb-8 pl-8 rounded-lg"
           style={{background: 'linear-gradient(125deg, ' + gradient + ')'}}
         >
-          <div className="grid grid-cols-4 gap-4" style={{ gridTemplateColumns: '1fr auto 1fr 1fr auto' }}>
+          <div className="grid grid-cols-5 gap-4" style={{ gridTemplateColumns: '1fr auto 1fr 1fr auto' }}>
             <div className="m-4">
               <div className="flex items-center mt-4">
                 <BsStars size="1.5em" />
