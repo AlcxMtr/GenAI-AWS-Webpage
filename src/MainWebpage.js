@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { BsStars } from "react-icons/bs";
@@ -39,10 +40,11 @@ const Card = ({ title, description, linkText, linkDescription, type, colors }) =
   </div>
 );
 
-const CarouselControl = ({ direction }) => (
+const CarouselControl = ({ direction, func }) => (
   <button
     className={`text-white bg-black rounded-full p-2 ${direction === 'prev' ? 'mr-2' : 'ml-2'}`}
     aria-label={direction === 'prev' ? 'Previous' : 'Next'}
+    onClick={func}
   >
     {direction === 'prev' && (
       <GoChevronLeft size="1.5em" />
@@ -54,6 +56,13 @@ const CarouselControl = ({ direction }) => (
 );
 
 const App = () => {
+  const [index, setIndex] = useState(0);
+  const incrementIndex = () => {
+    setIndex(index + 1);
+  };
+  const decrementIndex = () => {
+    setIndex(index - 1);
+  };
   const gradient = '#ccfdff, #5cc0ff, #9f80ff, #906bff';
   const cards = [
     {
@@ -97,14 +106,15 @@ const App = () => {
             </div>
             <div className={`bg-white rounded-r-2xl shadow-md`} style={{ width: '20px' }}>
             </div>
-            <Card {...cards[0]} />
-            <Card {...cards[1]} />
+            {/*Using modulo to loop through the cards - keeping the values positive */}
+            <Card {...cards[((index%len)+len)%len]} />
+            <Card {...cards[(((index+1)%len)+len)%len]} />
             <div className={`bg-white rounded-l-2xl shadow-md`} style={{ width: '20px' }}>
             </div>
           </div>
           <div className="flex justify-end items-center pt-8 pr-12">
-            <CarouselControl direction="prev" />
-            <CarouselControl direction="next" />
+            <CarouselControl direction="prev" func={decrementIndex} />
+            <CarouselControl direction="next" func={incrementIndex}/>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 mt-4">
