@@ -80,6 +80,7 @@ const App = () => {
       colors: gradient,
     },
   ];
+  const len = cards.length;
 
   return (
     <div 
@@ -87,7 +88,7 @@ const App = () => {
       style={{background: 'linear-gradient(45deg, #ffd67d, #d8a6ff)'}}
     >
       <div 
-        className="grid grid-rows-2 gap-4 p-8" 
+        className="grid grid-rows-2 gap-4 p-8 text-left" 
         style={{background: 'linear-gradient(transparent 40%, rgba(240,240,240,1)'}}
       >
         <div 

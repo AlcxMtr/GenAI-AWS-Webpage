@@ -1,11 +1,10 @@
-import React from 'react';
-import AWS from './MainWebpage';
-import './index.css';  // Ensure this line is present
+import './App.css';
+import ArbitraryWebpage from './ArbitraryWebpage';
 
 function App() {
   return (
     <div className="App">
-      <AWS />
+      <ArbitraryWebpage />
     </div>
   );
 }
