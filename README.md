@@ -1,2 +1,3 @@
-﻿## A React, Tailwind CSS webpage
+﻿## My React + Tailwind CSS webpage repository
 - Making a copy of an AWS webpage about their generative AI features from scratch
+- Making a ...
