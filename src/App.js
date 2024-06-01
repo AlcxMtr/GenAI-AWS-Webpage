@@ -1,5 +1,5 @@
 import './App.css';
-import ArbitraryWebpage from './ArbitraryWebpage';
+import ArbitraryWebpage from './Webpages/HeroTailwind';
 
 function App() {
   return (
